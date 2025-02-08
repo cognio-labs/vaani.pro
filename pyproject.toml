@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "vaani"
+version = "0.1.0"
+description = "a agentic voice-enabled chatbot"
+authors = ["Ashutosh Upadhyay, Shivam Upadhyay, Cognio Labs"]
+license = "Private"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+langchain = "^0.3.18"
+langchain-openai = "^0.3.4"
+langchain-anthropic = "^0.3.7"
+langchain-google-genai = "^2.0.9"
+langchain-fireworks = "^0.2.7"
+langchain-core = "^0.3.34"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
