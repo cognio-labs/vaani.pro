@@ -1,6 +1,3 @@
-Certainly! Below is a basic `README.md` file for your project. This file provides an overview of the project, installation instructions, usage examples, and other relevant information.
-
-```markdown:README.md
 # Vaani
 
 Vaani is an agentic voice-enabled chatbot that leverages multiple language models to generate responses based on user queries. It supports various models from OpenAI, Anthropic, Google, and Fireworks.
