@@ -10,15 +10,6 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_fireworks import ChatFireworks
 
 
-# --- Configuration ---
-# IMPORTANT: Set your API keys as environment variables!
-os.environ["OPENAI_API_KEY"] = "YOUR_OPENAI_API_KEY"
-os.environ["ANTHROPIC_API_KEY"] = "YOUR_ANTHROPIC_API_KEY"
-os.environ["GOOGLE_API_KEY"] = "YOUR_GOOGLE_API_KEY"
-os.environ["FIREWORKS_API_KEY"] = "YOUR_FIREWORKS_API_KEY"
-
-
-
 def get_model(model_name: str):
     """
     Gets the appropriate LangChain model based on the provided name.
