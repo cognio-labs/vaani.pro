@@ -9,6 +9,13 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_fireworks import ChatFireworks
 
+lc_key= os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_PROJECT"] = "vaani.pro"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+os.environ["LANGCHAIN_API_KEY"] = lc_key
+
+
 
 def get_model(model_name: str):
     """
@@ -16,17 +23,17 @@ def get_model(model_name: str):
     """
     match model_name:
         case "gpt-4o":
-            return ChatOpenAI(model_name="gpt-4o", temperature=0.7)
+            return ChatOpenAI(model_name="gpt-4o", temperature=0.7, api_key=os.getenv("OPENAI_API_KEY"))
         case "gpt-4o-mini":
-            return ChatOpenAI(model_name="gpt-4o", temperature=0.5, max_tokens=512)
+            return ChatOpenAI(model_name="gpt-4o", temperature=0.5, max_tokens=512, api_key=os.getenv("OPENAI_API_KEY"))
         case "gpt3-mini":
-            return ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.5, max_tokens=512)
+            return ChatOpenAI(model_name="gpt-3.5-turbo", temperature=0.5, max_tokens=512, api_key=os.getenv("OPENAI_API_KEY"))
         case "gemini-flash-2.0":
-            return ChatGoogleGenerativeAI(model="gemini-1.5-flash-002", temperature=0.6, convert_system_message_to_human=True)
+            return ChatGoogleGenerativeAI(model="gemini-1.5-flash-002", temperature=0.6, convert_system_message_to_human=True, api_key=os.getenv("GOOGLE_API_KEY"))
         case "claude-3.5-haiku":
-            return ChatAnthropic(model_name="claude-3-haiku-20240307", temperature=0.6)
+            return ChatAnthropic(model_name="claude-3-haiku-20240307", temperature=0.6, api_key=os.getenv("ANTHROPIC_API_KEY"))
         case "llama-3.3-70b":
-            return ChatFireworks(model_name="accounts/fireworks/models/llama-v3-70b-instruct", temperature=0.7)
+            return ChatFireworks(model_name="accounts/fireworks/models/llama-v3-70b-instruct", temperature=0.7, api_key=os.getenv("FIREWORKS_API_KEY"))
         case _:
             raise ValueError(f"Unsupported model: {model_name}")
 
