@@ -28,14 +28,23 @@ poetry install
 
 ## Configuration
 
-Before running the application, set your API keys as environment variables:
+Before running the application, set your API keys in a `.env` file. You can use the provided `.env.example` as a template:
 
-```bash
-export OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
-export ANTHROPIC_API_KEY="YOUR_ANTHROPIC_API_KEY"
-export GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
-export FIREWORKS_API_KEY="YOUR_FIREWORKS_API_KEY"
-```
+1. Copy the `.env.example` file to `.env`:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Fill in your API keys in the `.env` file:
+
+   ```plaintext
+   OPENAI_API_KEY="YOUR_OPENAI_API_KEY"
+   ANTHROPIC_API_KEY="YOUR_ANTHROPIC_API_KEY"
+   GOOGLE_API_KEY="YOUR_GOOGLE_API_KEY"
+   FIREWORKS_API_KEY="YOUR_FIREWORKS_API_KEY"
+   LANGCHAIN_API_KEY="YOUR_LANGCHAIN_API_KEY"
+   ```
 
 ## Usage
 
@@ -78,5 +87,3 @@ This project is licensed under a Private License. See the `pyproject.toml` for m
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
 
 ```
-
-This `README.md` provides a comprehensive overview of your project, including installation and usage instructions, which should help users get started with your chatbot. Adjust the content as needed to better fit your project's specifics or any additional features you may have.
